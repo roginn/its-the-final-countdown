@@ -1,16 +1,16 @@
 // Create Countdown
 var Countdown = {
-  
+
   // Backbone-like structure
   $el: $('.countdown'),
-  
+
   // Params
   countdown_interval: null,
   total_seconds     : 0,
-  
-  // Initialize the countdown  
+
+  // Initialize the countdown
   init: function(initValues) {
-    
+
     // DOM
 		this.$ = {
     	hours  : this.$el.find('.bloc-time.hours .figure'),
@@ -20,16 +20,16 @@ var Countdown = {
 
     // Init countdown values
     this.values = initValues;
-    
+
     // Initialize total seconds
     this.total_seconds = this.values.hours * 60 * 60 + (this.values.minutes * 60) + this.values.seconds;
 
-    // Animate countdown to the end 
-    this.count();    
+    // Animate countdown to the end
+    this.count();
   },
-  
+
   count: function() {
-    
+
     var that    = this,
         $hour_1 = this.$.hours.eq(0),
         $hour_2 = this.$.hours.eq(1),
@@ -37,12 +37,12 @@ var Countdown = {
         $min_2  = this.$.minutes.eq(1),
         $sec_1  = this.$.seconds.eq(0),
         $sec_2  = this.$.seconds.eq(1);
-    
+
         this.countdown_interval = setInterval(function() {
 
         if(that.total_seconds > 0) {
 
-            --that.values.seconds;              
+            --that.values.seconds;
 
             if(that.values.minutes >= 0 && that.values.seconds < 0) {
 
@@ -71,11 +71,11 @@ var Countdown = {
         else {
             clearInterval(that.countdown_interval);
         }
-    }, 1000);    
+    }, 1000);
   },
-  
+
   animateFigure: function($el, value) {
-    
+
      var that         = this,
 		     $top         = $el.find('.top'),
          $bottom      = $el.find('.bottom'),
@@ -103,16 +103,16 @@ var Countdown = {
         }
     });
 
-    TweenMax.to($back_top, 0.8, { 
+    TweenMax.to($back_top, 0.8, {
         rotationX           : 0,
         transformPerspective: 300,
-	      ease                : Quart.easeOut, 
-        clearProps          : 'all' 
-    });    
+	      ease                : Quart.easeOut,
+        clearProps          : 'all'
+    });
   },
-  
+
   checkHour: function(value, $el_1, $el_2) {
-    
+
     var val_1       = value.toString().charAt(0),
         val_2       = value.toString().charAt(1),
         fig_1_value = $el_1.find('.top').html(),
@@ -129,7 +129,7 @@ var Countdown = {
         // If we are under 10, replace first figure with 0
         if(fig_1_value !== '0') this.animateFigure($el_1, 0);
         if(fig_2_value !== val_1) this.animateFigure($el_2, val_1);
-    }    
+    }
   }
 };
 
@@ -143,27 +143,25 @@ function calcInitValues(dateEnd, dateNow) {
   leftSec = leftSec - hrs * 60*60;
 
   min = Math.floor(leftSec/(60));
-  leftSec = leftSec - min * 60; 
+  leftSec = leftSec - min * 60;
 
   return { hours: hrs, minutes: min, seconds: leftSec };
 }
 
 function itsTime() {
   dateNow = new Date();
-  
+
   if (dateEnd - dateNow < (24*60*60*1000)+1000) {
     Countdown.init(calcInitValues(dateEnd, dateNow));
   } else {
-    setTimeout(itsTime, 1000)  
+    setTimeout(itsTime, 1000)
   }
 }
 
 var dateBegin = new Date(2017, 4, 27, 15,30,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
-dateBegin = new Date(); // Teste
-
 var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
+
 var doReload  = true;
-doReload = false; // Teste
 
 if(doReload) {
   setTimeout(function(){ location.reload(true) }, 2000);
