@@ -172,3 +172,5 @@ if(eventStarted) {
 } else {
   setTimeout(function(){ location.reload(true) }, 10 * 1000);
 }
+
+setInterval(function(){ location.reload(true) }, 60 * 1000);
