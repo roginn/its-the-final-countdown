@@ -161,7 +161,7 @@ function itsTime() {
 
 
 // CHANGE HERE
-var eventStarted  = false;
+var eventStarted  = true;
 var dateBegin = new Date(2017, 4, 26, 21,46,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
 
 var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
