@@ -150,21 +150,25 @@ function calcInitValues(dateEnd, dateNow) {
 
 function itsTime() {
   dateNow = new Date();
+  console.log("Is it time? At " + dateNow);
 
   if (dateEnd - dateNow < (24*60*60*1000)+1000) {
     Countdown.init(calcInitValues(dateEnd, dateNow));
   } else {
-    setTimeout(itsTime, 1000)
+    setTimeout(itsTime, 1000);
   }
 }
 
-var dateBegin = new Date(2017, 4, 26, 21,38,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
+
+// CHANGE HERE
+var eventStarted  = true;
+var dateBegin = new Date(2017, 4, 26, 21,46,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
+
 var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
 
-var doReload  = true;
 
-if(doReload) {
-  setTimeout(function(){ location.reload(true) }, 2000);
+if(eventStarted) {
+  setTimeout(function(){ location.reload(true) }, 30000);
 } else {
   itsTime();
 }
