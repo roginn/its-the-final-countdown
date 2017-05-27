@@ -168,7 +168,7 @@ var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
 
 
 if(eventStarted) {
-  setTimeout(function(){ location.reload(true) }, 30000);
+  itsTime();  
 } else {
-  itsTime();
+  setTimeout(function(){ location.reload(true) }, 30000);
 }
