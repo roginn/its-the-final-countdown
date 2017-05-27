@@ -172,10 +172,10 @@ function setTo24() {
 }
 
 // CHANGE HERE
-var eventStarted  = false;
-var dateBegin = new Date(2017, 4, 27, 13, 33,24); // WTF, o 4 é o mes, e quer dizer Maio .-.
+var eventStarted  = true;
+var dateBegin = new Date(2017, 4, 27, 15, 18, 40); // WTF, o 4 é o mes, e quer dizer Maio .-.
 
-var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
+var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 90*1000);
 
 
 if(eventStarted) {
