@@ -162,7 +162,7 @@ function itsTime() {
 
 // CHANGE HERE
 var eventStarted  = true;
-var dateBegin = new Date(2017, 4, 27, 11,46,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
+var dateBegin = new Date(2017, 4, 27, 12,07,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
 
 var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
 
@@ -173,4 +173,5 @@ if(eventStarted) {
   setTimeout(function(){ location.reload(true) }, 10 * 1000);
 }
 
-setInterval(function(){ location.reload(true) }, 60 * 1000);
+// global reload time
+setTimeout(function(){ location.reload(true) }, 60 * 1000);
