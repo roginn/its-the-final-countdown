@@ -171,8 +171,13 @@ var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
 
 
 if(eventStarted) {
-  itsTime();  
+  itsTime();
 } else {
+  $('.hours-1 .top, .hours-1 .top-back, .hours-1 .bottom, .hours-1 .bottom-back').each(function(k, v) { v.innerText = '2'; })
+  $('.hours-2 .top, .hours-2 .top-back, .hours-2 .bottom, .hours-2 .bottom-back').each(function(k, v) { v.innerText = '4'; })
+
+  $('.min .top, .min .top-back, .min .bottom, .min .bottom-back').each(function(k, v) { v.innerText = '0'; })
+  $('.sec .top, .sec .top-back, .sec .bottom, .sec .bottom-back').each(function(k, v) { v.innerText = '0'; })
   setTimeout(function(){ location.reload(true) }, 10 * 1000);
 }
 
