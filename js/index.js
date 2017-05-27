@@ -161,7 +161,7 @@ function itsTime() {
 var dateBegin = new Date(2017, 4, 26, 21,38,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
 var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
 
-var doReload  = false;
+var doReload  = true;
 
 if(doReload) {
   setTimeout(function(){ location.reload(true) }, 2000);
