@@ -152,8 +152,11 @@ function itsTime() {
   dateNow = new Date();
   console.log("Is it time? At " + dateNow);
 
-  if (dateEnd - dateNow < (24*60*60*1000) + 1000) {
+  if (dateNow < dateEnd && dateEnd - dateNow < (24*60*60*1000) + 1000) {
     Countdown.init(calcInitValues(dateEnd, dateNow));
+  }
+  else if (dateNow > dateEnd) {
+    $('.top, .top-back, .bottom, .bottom-back').each(function(k, v) { v.innerText = '0'; })
   } else {
     setTimeout(itsTime, 1000);
   }
@@ -161,8 +164,8 @@ function itsTime() {
 
 
 // CHANGE HERE
-var eventStarted  = true;
-var dateBegin = new Date(2017, 4, 26, 12,11,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
+var eventStarted  = false;
+var dateBegin = new Date(2017, 4, 27, 12,11,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
 
 var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
 
@@ -174,4 +177,4 @@ if(eventStarted) {
 }
 
 // global reload time
-setTimeout(function(){ location.reload(true) }, 60 * 1000);
+// setTimeout(function(){ location.reload(true) }, 60 * 1000);
