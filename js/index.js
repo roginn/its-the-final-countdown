@@ -150,12 +150,13 @@ function calcInitValues(dateEnd, dateNow) {
 
 function itsTime() {
   dateNow = new Date();
-  console.log("Is it time? At " + dateNow);
+  // console.log("Is it time? At " + dateNow);
 
   if (dateNow < dateEnd && dateEnd - dateNow < (24*60*60*1000) + 1000) {
     Countdown.init(calcInitValues(dateEnd, dateNow));
   }
   else if (dateNow > dateEnd) {
+    console.log('dateNow > dateEnd')
     $('.top, .top-back, .bottom, .bottom-back').each(function(k, v) { v.innerText = '0'; })
   } else {
     setTo24();
@@ -164,6 +165,7 @@ function itsTime() {
 }
 
 function setTo24() {
+  console.log('setTo24');
   $('.hours-1 .top, .hours-1 .top-back, .hours-1 .bottom, .hours-1 .bottom-back').each(function(k, v) { v.innerText = '2'; })
   $('.hours-2 .top, .hours-2 .top-back, .hours-2 .bottom, .hours-2 .bottom-back').each(function(k, v) { v.innerText = '4'; })
 
@@ -172,8 +174,9 @@ function setTo24() {
 }
 
 // CHANGE HERE
-var eventStarted  = true;
-var dateBegin = new Date(2017, 4, 27, 12,58,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
+var eventStarted  = false;
+// var dateBegin = new Date(2018, 4, 5, 10,26,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
+var dateBegin = new Date(2018, 4, 4, 13,00,00); // teste, remover
 
 var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
 
@@ -182,8 +185,8 @@ if(eventStarted) {
   itsTime();
 } else {
   setTo24();
-  setTimeout(function(){ location.reload(true) }, 10 * 1000);
+  setTimeout(function(){ location.reload(true) }, 60 * 1000);
 }
 
 // global reload time
-// setTimeout(function(){ location.reload(true) }, 60 * 1000);
+setTimeout(function(){ location.reload(true) }, 10 * 60 * 1000);
