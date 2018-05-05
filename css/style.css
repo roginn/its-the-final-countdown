@@ -19,6 +19,7 @@ html {
 body {
   background-color: #f2f1ed;
   font-family: museo-sans, sans-serif;
+  font-weight: 300;
 }
 
 .wrap {
