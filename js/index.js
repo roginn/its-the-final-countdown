@@ -174,7 +174,7 @@ function setTo24() {
 }
 
 // CHANGE HERE
-var eventStarted  = false;
+var eventStarted  = true;
 // var dateBegin = new Date(2018, 4, 5, 10,26,00); // WTF, o 4 é o mes, e quer dizer Maio .-.
 var dateBegin = new Date(2018, 4, 4, 13,00,00); // teste, remover
 
