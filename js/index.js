@@ -166,17 +166,17 @@ function itsTime() {
 
 function setTo24() {
   console.log('setTo24');
-  $('.hours-1 .top, .hours-1 .top-back, .hours-1 .bottom, .hours-1 .bottom-back').each(function(k, v) { v.innerText = '2'; })
-  $('.hours-2 .top, .hours-2 .top-back, .hours-2 .bottom, .hours-2 .bottom-back').each(function(k, v) { v.innerText = '4'; })
+  // $('.hours-1 .top, .hours-1 .top-back, .hours-1 .bottom, .hours-1 .bottom-back').each(function(k, v) { v.innerText = '2'; })
+  // $('.hours-2 .top, .hours-2 .top-back, .hours-2 .bottom, .hours-2 .bottom-back').each(function(k, v) { v.innerText = '4'; })
 
-  $('.min .top, .min .top-back, .min .bottom, .min .bottom-back').each(function(k, v) { v.innerText = '0'; })
-  $('.sec .top, .sec .top-back, .sec .bottom, .sec .bottom-back').each(function(k, v) { v.innerText = '0'; })
+  // $('.min .top, .min .top-back, .min .bottom, .min .bottom-back').each(function(k, v) { v.innerText = '0'; })
+  // $('.sec .top, .sec .top-back, .sec .bottom, .sec .bottom-back').each(function(k, v) { v.innerText = '0'; })
 }
 
 // CHANGE HERE
 var eventStarted  = true;
 
-var dateBegin = new Date(2018,4,5, 13,20,0); // WTF, o 4 é o mes, e quer dizer Maio .-.
+var dateBegin = new Date(2018,4,5, 13,40,0); // WTF, o 4 é o mes, e quer dizer Maio .-.
 var dateEnd   = new Date(dateBegin.getTime() + 24*60*60*1000 + 15*1000);
 
 
